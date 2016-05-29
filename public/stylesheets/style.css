@@ -1,0 +1,77 @@
+body, h3, h1, h2, .logoStyle {
+    font-family: 'Anton', sans-serif;
+}
+.textMargin {
+    margin-left:25%;
+}
+.timelineStyle {
+    float: left;
+    margin-left: 30px;
+    font-size: large;
+}
+.uhStyle {
+    height: 50%;
+}
+.searchStyle {
+    width: 40%;
+    float: right;
+    margin: 0 30px 30px 0;
+}
+.itemsContent {
+    margin:50px 30px 0 30px;
+}
+.textOverflow {
+    word-wrap:break-word;
+}
+.formPadding {
+    padding-top: 10px;
+}
+
+#slider {
+    padding:40px 10px 0 10px;
+    border:1px inset darkgray;
+    background-color:#ecf0f5;
+}
+.formFooter {
+    margin-top: 30px;
+}
+#formSubmit {
+    margin: 0 10px 0 30px;
+}
+#reset, #trigger, #panel1 {
+    display: none;
+}
+#cancelForm {
+    margin: 0 20px 0 10px;
+}
+.inner-addon {
+    position: relative;
+}
+.logoCustom {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.lbStyle {
+    border: 1px inset cornflowerblue;
+    padding: 10px;
+    background-color: #ecf0f5;
+}
+.logoStyle {
+    font-weight: bold;
+}
+.lbbStyle {
+    background-color: inherit;
+}
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.right-addon .glyphicon { right: 0px;}
+.right-addon input { padding-right: 30px; }
+
+.description {
+    font-style: italic;
+}

@@ -1,0 +1,113 @@
+<!-- Info boxes -->
+<div ng-include="information">
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">Lost and Found Map</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-wrench"></i></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <!-- /.box-header -->
+
+            <div class="box-body">
+                <div class="row" nd-model="id">
+
+                    <div  ng-include src="university"class="col-md-12" id="university" >
+
+                    </div>
+                    <a href="lostandfound.html" data-slidepanel="panel" style="display:none" id="panel1">Show Panel</a>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- ./box-body -->
+
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->
+<!--Slider Code-->
+<div id='slider' ng-model="id">
+    Please Fill out the Form to add Item Lost/Found in {{id}}
+    <form>
+        <fieldset class="form-group">
+            <label for="name">Item Name</label>
+            <input type="text" class="form-control" id="name" ng-model="name" placeholder="Enter Name" >
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" ng-model="description"  rows="3"></textarea>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" ng-model="date" id="date">
+        </fieldset>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="lf" name="optionsRadios" id="optionsRadios1" value="Lost" checked>
+                Lost
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio"  ng-model="lf" name="optionsRadios" id="optionsRadios2" value="Found">
+                Found
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="myFun()">Submit</button>
+    </form>
+</div>
+<button id='trigger'>Trigger</button>
+
+
+
+<!-- Main row -->
+<!--
+<div class="row">
+
+    &lt;!&ndash; Left col &ndash;&gt;
+    <div class="col-md-12">
+        &lt;!&ndash; MAP & BOX PANE &ndash;&gt;
+        <div class="row">
+            <div class="col-md-6" ng-include="chat">
+
+                &lt;!&ndash;/.direct-chat &ndash;&gt;
+            </div>
+            &lt;!&ndash; /.col &ndash;&gt;
+
+            <div class="col-md-6" ng-include="latest">
+                &lt;!&ndash; USERS LIST &ndash;&gt;
+
+                &lt;!&ndash;/.box &ndash;&gt;
+            </div>
+            &lt;!&ndash; /.col &ndash;&gt;
+        </div>
+        &lt;!&ndash; /.row &ndash;&gt;
+
+        &lt;!&ndash; /.box &ndash;&gt;
+    </div>
+    &lt;!&ndash; /.col &ndash;&gt;
+</div>-->

@@ -1,0 +1,46 @@
+<div class="row">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="timelineStyle">Timeline</div>
+        <div class="input-group searchStyle">
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+            <input type="text" ng-model="query" class="form-control" placeholder="Search" />
+        </div>
+    </section>
+    <!-- Main content -->
+    <section class="content itemsContent">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- The time line -->
+                <div ng-show="lostCount==0">
+                    <div class="alert alert-info" role="alert">Nothing's been lost yet!</div>
+                </div>
+                <ul class="timeline">
+                    <!-- timeline item -->
+                    <li ng-repeat="item in lostitems | orderBy:'-date_posted' | filter: query " id="{{item._id}}">
+                        <i class="fa fa-comments bg-yellow"></i>
+                        <div class="timeline-item">
+                            <span class="time"><i class="fa fa-clock-o"></i>  {{item.date_formated}}</span>
+                            <h3 class="timeline-header">{{item.user}} lost {{item.name}} at {{item.location}}</h3>
+                            <div class="timeline-body textOverflow">
+                                <div><em>Item Description: {{item.description}}</em></div>
+                                <div><em>Lost on {{item.date}}</em></div>
+                            </div>
+                            <div class="timeline-footer">
+                                <button ng-hide="item.user==username" class="btn btn-warning btn-flat btn-xs contact">Contact <span>{{item.user}}</span></button>
+                                <button ng-show="item.user==username" class="btn btn-warning btn-flat btn-xs" ng-click="postDelete(item._id)" data-toggle="tooltip" data-placement="bottom" title="Delete this post">Found my item</button>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>

@@ -1,0 +1,125 @@
+<div class="wrapper">
+
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="#" ng-click="setUniversity('/university.html')" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini logoStyle">L&F</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg logoStyle">Lost & Found</span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">{{username}}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header uhStyle">
+                                <p>
+                                    {{username}}
+                                </p>
+                            </li>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat" ng-click="editProfile()">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat" ng-click="logout()">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="header">Lost & Found</li>
+                <li class="treeview" ng-class="{active : pageTitle === 'Campus Map'}">
+                    <a href="#" ng-click="setUniversity('/university.html')">
+                        <i class="fa fa-circle-o"></i><span>Campus Map</span>
+                    </a>
+                </li>
+                <li class="treeview" ng-class="{active : pageTitle === 'Lost Items'}">
+                    <a href="#" ng-click="setUniversity('/lostitem.html')">
+                        <i class="fa fa-circle-o"></i><span>Lost Items</span>
+                    </a>
+                </li>
+                <li class="treeview" ng-class="{active : pageTitle === 'Found Items'}">
+                    <a href="#" ng-click="setUniversity('/founditem.html')">
+                        <i class="fa fa-circle-o"></i><span>Found Items</span>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <!-- Info boxes -->
+            <div ng-include="information">
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title" ng-model="pageTitle">{{pageTitle}}</h3>
+                        </div>
+                        <!-- /.box-header -->
+
+                        <div class="box-body">
+                            <div class="row" nd-model="id">
+
+                                <div ng-include src="university"class="col-md-12" id="university" >
+
+                                    <!-- /.chart-responsive -->
+                                </div>
+                                <a href="lostandfound.html" data-slidepanel="panel" id="panel1">Show Panel</a>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- ./box-body -->
+
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <div class="control-sidebar-bg"></div>
+
+</div>
