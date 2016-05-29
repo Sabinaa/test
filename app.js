@@ -146,5 +146,9 @@ io.on("connection", function(socket) {
 
 });
 
-server.listen(8000);
-console.log("Server started on port:8000");
+server.listen(process.env.PORT || 3000, function(){
+  console.log('listening on', http.address().port);
+});
+
+//server.listen(8000);
+//console.log("Server started on port:8000");
